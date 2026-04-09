@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Millionaire Minds Childcare Academy | Philadelphia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1e40af;
+            --bright-red: #dc2626;
+            --green: #16a34a;
+            --gold: #fbbf24;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--white);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .nav-logo-text {
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        .nav-logo-text span:first-child {
+            color: var(--green);
+        }
+
+        .nav-logo-text span:last-child {
+            color: var(--bright-red);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-phone {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-phone:hover {
+            background: var(--green);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(22, 163, 74, 0.3);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f0f9ff 0%, #fffbeb 50%, #f0fdf4 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 2rem 4rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(30, 64, 175, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(22, 163, 74, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(251, 191, 36, 0.06) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-logo {
+            margin-bottom: 2rem;
+        }
+
+        .brain-logo {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 1.5rem;
+            position: relative;
+        }
+
+        .brain-svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-logo-text {
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero-logo-text .line1 {
+            display: block;
+        }
+
+        .hero-logo-text .millionaire {
+            color: var(--green);
+        }
+
+        .hero-logo-text .minds {
+            color: var(--bright-red);
+        }
+
+        .hero-logo-text .line2 {
+            display: block;
+            font-size: 1.1rem;
+            color: var(--primary-blue);
+            letter-spacing: 3px;
+            margin-top: 0.25rem;
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .hero-subtext {
+            font-size: 1.1rem;
+            color: #6b7280;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--green);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(22, 163, 74, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .hero-phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--gold);
+            color: var(--dark);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .hero-phone:hover {
+            background: var(--bright-red);
+            color: var(--white);
+            transform: scale(1.05);
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #6b7280;
+            font-weight: 500;
+        }
+
+        .badge svg {
+            width: 24px;
+            height: 24px;
+            color: var(--green);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Programs Section */
+        .programs {
+            background: var(--white);
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .program-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .program-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+            border-color: var(--gold);
+        }
+
+        .program-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+
+        .program-card:nth-child(1) .program-icon { background: linear-gradient(135deg, #dbeafe, #bfdbfe); }
+        .program-card:nth-child(2) .program-icon { background: linear-gradient(135deg, #dcfce7, #bbf7d0); }
+        .program-card:nth-child(3) .program-icon { background: linear-gradient(135deg, #fef3c7, #fde68a); }
+        .program-card:nth-child(4) .program-icon { background: linear-gradient(135deg, #fee2e2, #fecaca); }
+
+        .program-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .program-card p {
+            color: #6b7280;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .program-age {
+            display: inline-block;
+            background: var(--light);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-top: 1rem;
+        }
+
+        /* Why Choose Us Section */
+        .why-us {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        .benefit-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .benefit-icon svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .benefit-card:nth-child(1) .benefit-icon { background: #dbeafe; color: var(--primary-blue); }
+        .benefit-card:nth-child(2) .benefit-icon { background: #dcfce7; color: var(--green); }
+        .benefit-card:nth-child(3) .benefit-icon { background: #fee2e2; color: var(--bright-red); }
+        .benefit-card:nth-child(4) .benefit-icon { background: #fef3c7; color: #d97706; }
+        .benefit-card:nth-child(5) .benefit-icon { background: #ede9fe; color: #7c3aed; }
+        .benefit-card:nth-child(6) .benefit-icon { background: #cffafe; color: #0891b2; }
+        .benefit-card:nth-child(7) .benefit-icon { background: #fce7f3; color: #db2777; }
+        .benefit-card:nth-child(8) .benefit-icon { background: #f3e8ff; color: #9333ea; }
+
+        .benefit-content h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .benefit-content p {
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+
+        /* Summer Camp Section */
+        .summer-camp {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #1e3a8a 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .summer-camp::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .summer-camp .section-header h2 {
+            color: var(--white);
+        }
+
+        .summer-camp .section-header p {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .camp-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .camp-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .camp-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .camp-details h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--gold);
+        }
+
+        .camp-date {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .price-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.25rem;
+            border-radius: 12px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .price-item .amount {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--gold);
+        }
+
+        .price-item .label {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.8);
+            margin-top: 0.25rem;
+        }
+
+        .camp-includes {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .camp-includes h4 {
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .camp-includes ul {
+            list-style: none;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .camp-includes li {
+            padding: 0.35rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .camp-includes li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        /* Locations Section */
+        .locations {
+            background: var(--white);
+        }
+
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .location-card {
+            background: var(--light);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .location-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+        }
+
+        .location-map {
+            height: 200px;
+            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .location-map::after {
+            content: '📍';
+            font-size: 3rem;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+        }
+
+        .location-info {
+            padding: 1.5rem 2rem 2rem;
+        }
+
+        .location-info h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .location-info p {
+            color: #6b7280;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .location-phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .location-phone:hover {
+            color: var(--green);
+        }
+
+        /* Contact CTA Section */
+        .contact-cta {
+            background: linear-gradient(135deg, var(--green) 0%, #15803d 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .contact-cta h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .contact-cta p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .cta-phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--white);
+            color: var(--green);
+            padding: 1.25rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 800;
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-phone:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .urgency-badge {
+            display: inline-block;
+            background: var(--bright-red);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo .green { color: var(--green); }
+        .footer-logo .red { color: var(--bright-red); }
+
+        .footer-tagline {
+            color: #9ca3af;
+            margin-bottom: 2rem;
+        }
+
+        .footer-phone {
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .footer-bottom {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding-top: 5rem;
+            }
+
+            .hero-logo-text {
+                font-size: 1.6rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.1rem;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn, .hero-phone {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .camp-content {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .locations-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-cta h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-phone {
+                font-size: 1.1rem;
+                padding: 1rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <svg class="brain-svg" viewBox="0 0 100 100" style="width: 40px; height: 40px;">
+                    <ellipse cx="50" cy="50" rx="45" ry="40" fill="#f3f4f6"/>
+                    <path d="M30 35 Q40 25 50 35 Q60 25 70 35 Q75 45 70 55 Q60 65 50 55 Q40 65 30 55 Q25 45 30 35" fill="#1e40af"/>
+                    <path d="M35 40 Q42 32 50 40" fill="#16a34a"/>
+                    <path d="M50 40 Q58 32 65 40" fill="#dc2626"/>
+                    <path d="M35 48 Q42 40 50 48" fill="#fbbf24"/>
+                    <path d="M50 48 Q58 40 65 48" fill="#8b5cf6"/>
+                    <circle cx="50" cy="55" r="8" fill="#f97316"/>
+                </svg>
+                <span class="nav-logo-text">
+                    <span>MILLIONAIRE</span> <span>MINDS</span>
+                </span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#summer-camp">Summer Camp</a></li>
+                <li><a href="#locations">Locations</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="tel:2156905170" class="nav-phone">(215) 690-5170</a>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-logo">
+                <div class="brain-logo">
+                    <svg class="brain-svg" viewBox="0 0 100 100">
+                        <ellipse cx="50" cy="50" rx="45" ry="40" fill="#f3f4f6" stroke="#e5e7eb" stroke-width="2"/>
+                        <path d="M25 30 Q40 15 50 30 Q60 15 75 30 Q82 45 75 60 Q60 75 50 60 Q40 75 25 60 Q18 45 25 30" fill="#1e40af"/>
+                        <path d="M32 38 Q42 28 50 38" fill="#16a34a"/>
+                        <path d="M50 38 Q58 28 68 38" fill="#dc2626"/>
+                        <path d="M32 48 Q42 38 50 48" fill="#fbbf24"/>
+                        <path d="M50 48 Q58 38 68 48" fill="#8b5cf6"/>
+                        <circle cx="50" cy="56" r="10" fill="#f97316"/>
+                        <ellipse cx="35" cy="45" rx="3" ry="5" fill="#1f2937"/>
+                        <path d="M28 55 Q35 62 42 55" fill="none" stroke="#1f2937" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="hero-logo-text">
+                    <span class="line1">
+                        <span class="millionaire">MILLIONAIRE</span> <span class="minds">MINDS</span>
+                    </span>
+                    <span class="line2">CHILDCARE ACADEMY</span>
+                </div>
+            </div>
+            <p class="hero-tagline">Where Little Minds Grow into Millionaire Minds</p>
+            <p class="hero-subtext">Nurturing the next generation of leaders through STEAM-based learning, creative play, and a safe, loving environment.</p>
+            <div class="hero-ctas">
+                <a href="#contact" class="btn btn-primary">Schedule a Tour</a>
+                <a href="#contact" class="btn btn-secondary">Enroll Now</a>
+            </div>
+            <a href="tel:2156905170" class="hero-phone">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                (215) 690-5170
+            </a>
+            <div class="hero-badges">
+                <div class="badge">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    Licensed & Insured
+                </div>
+                <div class="badge">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    Keystone STARS
+                </div>
+                <div class="badge">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    Caring Staff
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs" id="programs">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Programs</h2>
+                <p>Age-appropriate curriculum designed to inspire curiosity, creativity, and confidence at every stage.</p>
+            </div>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-icon">👶</div>
+                    <h3>Infants</h3>
+                    <p>Gentle care and early stimulation in a nurturing environment. We focus on sensory exploration, motor development, and building secure attachments.</p>
+                    <span class="program-age">6 weeks - 12 months</span>
+                </div>
+                <div class="program-card">
+                    <div class="program-icon">🧸</div>
+                    <h3>Toddlers</h3>
+                    <p>Active learning through play! Our toddler program encourages language development, social skills, and discovery of the world around them.</p>
+                    <span class="program-age">1 - 3 years</span>
+                </div>
+                <div class="program-card">
+                    <div class="program-icon">🎨</div>
+                    <h3>Pre-K</h3>
+                    <p>Kindergarten readiness through STEAM activities, early literacy, and structured play. Building the foundation for academic success.</p>
+                    <span class="program-age">3 - 5 years</span>
+                </div>
+                <div class="program-card">
+                    <div class="program-icon">📚</div>
+                    <h3>School Age</h3>
+                    <p>Before & after school care with homework help, enrichment activities, and a safe space to grow. Transportation available!</p>
+                    <span class="program-age">5 - 12 years</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Us</h2>
+                <p>We're more than daycare — we're a partner in your child's growth and development.</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>STEAM-Based Learning</h4>
+                        <p>Science, Technology, Engineering, Arts & Math integrated into daily activities</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>Nutritious Meals</h4>
+                        <p>Breakfast, lunch, and healthy snacks included — no extra cost to you</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>Safe Environment</h4>
+                        <p>Secure facilities with controlled access and constant supervision</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>Indoor Play Gym</h4>
+                        <p>Year-round physical activity regardless of Philadelphia weather</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>Before & After Care</h4>
+                        <p>Flexible scheduling that works with your busy life</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>Transportation Available</h4>
+                        <p>Safe school pickup and drop-off services for school-age children</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>Extended Hours</h4>
+                        <p>Open 6:00 AM to Midnight to accommodate all schedules</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>Saturday Drop-Ins</h4>
+                        <p>Weekend care available when you need it most</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Summer Camp Section -->
+    <section class="summer-camp" id="summer-camp">
+        <div class="container">
+            <div class="section-header">
+                <h2>☀️ Summer Camp 2026</h2>
+                <p>An unforgettable summer of fun, learning, and adventure awaits!</p>
+            </div>
+            <div class="camp-content">
+                <div class="camp-image">
+                    <img src="https://placehold.co/600x400/1e40af/ffffff?text=Summer+Camp+Fun" alt="Summer Camp Activities">
+                </div>
+                <div class="camp-details">
+                    <h3>9 Weeks of Adventure</h3>
+                    <div class="camp-date">
+                        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                        June 22 - August 21, 2026
+                    </div>
+                    <div class="pricing-grid">
+                        <div class="price-item">
+                            <div class="amount">$250</div>
+                            <div class="label">per week</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="amount">$75</div>
+                            <div class="label">registration</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="amount">$125</div>
+                            <div class="label">camp trip fee</div>
+                        </div>
+                    </div>
+                    <div class="camp-includes">
+                        <h4>
+                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="display: inline; vertical-align: middle; margin-right: 0.5rem;"><path d="M5 13l4 4L19 7"/></svg>
+                            All-Inclusive Package
+                        </h4>
+                        <ul>
+                            <li>Breakfast, lunch & snacks included</li>
+                            <li>Field trips & special activities</li>
+                            <li>Arts, crafts & STEAM projects</li>
+                            <li>Indoor & outdoor play</li>
+                            <li>Experienced, caring counselors</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section class="locations" id="locations">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Locations</h2>
+                <p>Two convenient Philadelphia locations to serve you better</p>
+            </div>
+            <div class="locations-grid">
+                <div class="location-card">
+                    <div class="location-map"></div>
+                    <div class="location-info">
+                        <h3>Kershaw Street Location</h3>
+                        <p>4923 Kershaw Street<br>Philadelphia, PA 19139</p>
+                        <a href="tel:2156905170" class="location-phone">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            (215) 690-5170
+                        </a>
+                    </div>
+                </div>
+                <div class="location-card">
+                    <div class="location-map"></div>
+                    <div class="location-info">
+                        <h3>Lancaster Avenue Location</h3>
+                        <p>4950 Lancaster Avenue<br>Philadelphia, PA 19139</p>
+                        <a href="tel:2156905170" class="location-phone">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            (215) 690-5170
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="contact-cta" id="contact">
+        <div class="container">
+            <h2>Call Today to Schedule a Tour!</h2>
+            <p>See why families across Philadelphia trust Millionaire Minds</p>
+            <a href="tel:2156905170" class="cta-phone">
+                <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                (215) 690-5170
+            </a>
+            <div class="urgency-badge">⚡ Limited Spots Available</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <span class="green">MILLIONAIRE</span> <span class="red">MINDS</span>
+        </div>
+        <p class="footer-tagline">Where Little Minds Grow into Millionaire Minds</p>
+        <a href="tel:2156905170" class="footer-phone">(215) 690-5170</a>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Millionaire Minds Childcare Academy. All rights reserved.</p>
+            <p>Serving Philadelphia families with love and excellence.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.right = '0';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.background = 'white';
+                navLinks.style.padding = '1rem';
+                navLinks.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    if (window.innerWidth <= 768) {
+                        navLinks.style.display = 'none';
+                    }
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        const nav = document.querySelector('nav');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe cards for animation
+        document.querySelectorAll('.program-card, .benefit-card, .location-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
