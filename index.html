@@ -253,7 +253,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #f0f9ff 0%, #fffbeb 25%, #fef3c7 50%, #f0fdf4 75%, #f5f3ff 100%);
+            background: #fbbf24;
             position: relative;
             overflow: hidden;
             padding: 6rem 2rem 4rem;
@@ -534,21 +534,15 @@
 
         /* Programs Section */
         .programs {
-            background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 50%, #fffbeb 100%);
+            background: #16a34a;
             position: relative;
         }
 
-        .programs::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(30, 64, 175, 0.05) 0%, transparent 30%),
-                radial-gradient(circle at 90% 80%, rgba(251, 191, 36, 0.05) 0%, transparent 30%);
-            pointer-events: none;
+        }
+
+        .programs .section-header h2,
+        .programs .section-header p {
+            color: var(--white);
         }
 
         .programs-grid {
@@ -635,21 +629,13 @@
 
         /* Why Choose Us Section */
         .why-us {
-            background: linear-gradient(135deg, #f0fdf4 0%, #fef3c7 50%, #f0f9ff 100%);
+            background: #1e40af;
             position: relative;
         }
 
-        .why-us::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 80% 10%, rgba(22, 163, 74, 0.05) 0%, transparent 30%),
-                radial-gradient(circle at 20% 90%, rgba(30, 64, 175, 0.05) 0%, transparent 30%);
-            pointer-events: none;
+        .why-us .section-header h2,
+        .why-us .section-header p {
+            color: var(--white);
         }
 
         .benefits-grid {
@@ -726,32 +712,10 @@
 
         /* Summer Camp Section */
         .summer-camp {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, #1e3a8a 50%, #312e81 100%);
+            background: #dc2626;
             color: var(--white);
             position: relative;
             overflow: hidden;
-        }
-
-        .summer-camp::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(251, 191, 36, 0.2) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .summer-camp::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -10%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(22, 163, 74, 0.15) 0%, transparent 70%);
-            pointer-events: none;
         }
 
         .summer-camp .section-header h2 {
@@ -918,21 +882,8 @@
 
         /* Locations Section */
         .locations {
-            background: linear-gradient(135deg, #ffffff 0%, #f5f3ff 50%, #f0fdf4 100%);
+            background: #fbbf24;
             position: relative;
-        }
-
-        .locations::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 15% 85%, rgba(139, 92, 246, 0.05) 0%, transparent 30%),
-                radial-gradient(circle at 85% 15%, rgba(22, 163, 74, 0.05) 0%, transparent 30%);
-            pointer-events: none;
         }
 
         .locations-grid {
@@ -1034,25 +985,12 @@
 
         /* Contact CTA Section */
         .contact-cta {
-            background: linear-gradient(135deg, var(--green) 0%, #15803d 50%, #166534 100%);
+            background: #16a34a;
             color: var(--white);
             text-align: center;
             padding: 5rem 2rem;
             position: relative;
             overflow: hidden;
-        }
-
-        .contact-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 20% 80%, rgba(251, 191, 36, 0.1) 0%, transparent 40%),
-                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 40%);
-            pointer-events: none;
         }
 
         .contact-cta .container {
